@@ -19,6 +19,10 @@ using the provided 'sstableupgrade' tool.
 
 New features
 ------------
+   - Direct memory used for native-protocol network I/O is no longer
+     managed by the JVM. Instead, Netty allows three options to
+     manage it via the system property io.netty.maxDirectMemory.
+     See conf/jvm.options for more information.
    - Shared pool threads are now named according to the stage they are executing
      tasks for. Thread names mentioned in traced queries change accordingly.
    - A new option has been added to cassandra-stress "-rate fixed={number}/s"
